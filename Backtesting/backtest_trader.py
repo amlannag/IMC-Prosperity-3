@@ -40,9 +40,10 @@ class Trader:
         
         # Iterate over all products
         for product in state.order_depths.keys():
-            # Get the order depth for this product
-            order_depth = state.order_depths[product]
             
+            order_depth = state.order_depths[product]
+            print("buy",order_depth.buy_orders)
+            print("sell",order_depth.sell_orders)
             # Initialize the list of Orders to be sent
             orders: List[Order] = []
             

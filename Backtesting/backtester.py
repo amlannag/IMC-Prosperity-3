@@ -102,7 +102,6 @@ class Backtester:
             )
 
             result, _, self.traderData = self.trader.run(state)
-            print(result)
             for product, orders in result.items():
                 if product not in order_depths:
                     continue
@@ -222,4 +221,3 @@ if __name__ == "__main__":
     trader = Trader()
     backtester = Backtester(csv_file=csv_file_path, trader=trader, position_limit=50)
     backtester.run()
-    backtester.plot_all()
